@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColaNet.Web", "ColaNet.Web\ColaNet.Web.csproj", "{C62F7473-ABC2-478D-8FF7-95B34CD9BA21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColaNet.Core", "ColaNet.Core\ColaNet.Core.csproj", "{318514AE-FE78-4400-BA34-EC2EA8C3788E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColaNet.Models", "ColaNet.Models\ColaNet.Models.csproj", "{6ABFE1C7-A490-480F-8026-51AF2FD7FA40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C62F7473-ABC2-478D-8FF7-95B34CD9BA21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C62F7473-ABC2-478D-8FF7-95B34CD9BA21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C62F7473-ABC2-478D-8FF7-95B34CD9BA21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C62F7473-ABC2-478D-8FF7-95B34CD9BA21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{318514AE-FE78-4400-BA34-EC2EA8C3788E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318514AE-FE78-4400-BA34-EC2EA8C3788E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318514AE-FE78-4400-BA34-EC2EA8C3788E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318514AE-FE78-4400-BA34-EC2EA8C3788E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ABFE1C7-A490-480F-8026-51AF2FD7FA40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ABFE1C7-A490-480F-8026-51AF2FD7FA40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ABFE1C7-A490-480F-8026-51AF2FD7FA40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ABFE1C7-A490-480F-8026-51AF2FD7FA40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
