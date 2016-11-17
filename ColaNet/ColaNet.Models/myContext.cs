@@ -9,8 +9,7 @@ using ColaNet.Models.Entitys;
 
 namespace ColaNet.Models
 {
-    public class myContext :ColaDbContext
-
+    public class myContext : DbContext
     {
         public virtual IDbSet<User> Users { get; set; }
         public myContext()

@@ -13,12 +13,12 @@ namespace ColaNet.Core.Repositories
     public class Repository<T, K> : IRepository<T, K>
         where T : class
     {
-        private ColaDbContext _colaEntities;
+        private DbContext _colaEntities;
 
 
-        public Repository()
+        public Repository(IColaDbContext colaDbcontext)
         {
-            _colaEntities = new ColaDbContext();
+            _colaEntities = colaDbcontext.dbcontext;
         }
 
         /// <summary>
@@ -176,6 +176,10 @@ namespace ColaNet.Core.Repositories
 
     public class Repository<T> : Repository<T, long>,IRepository<T> where T : class
     {
+        public Repository(IColaDbContext colaDbcontext)
+            : base(colaDbcontext)
+        {
 
+        }
     }
 }

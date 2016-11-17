@@ -8,14 +8,8 @@ using System.Threading.Tasks;
 
 namespace ColaNet.Core.Entityframework
 {
-    public class ColaDbContext:DbContext
+    public interface IColaDbContext : IDependency
     {
-        public ColaDbContext() { }
-
-        public DbContext dbContext { get; set; }
-        public ColaDbContext(string connStr)
-            : base(connStr)
-        {
-        }
+        DbContext dbcontext { get; set; }
     }
 }

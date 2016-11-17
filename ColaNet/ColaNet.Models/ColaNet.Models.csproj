@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CloaDbcontext.cs" />
     <Compile Include="myContext.cs" />
     <Compile Include="Entitys\User.cs" />
     <Compile Include="Migrations\201611170913525_InitialUser.cs" />
