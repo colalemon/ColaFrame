@@ -8,13 +8,13 @@ using System.Data.Entity;
 
 namespace ColaNet.Models
 {
-    public class CloaDbcontext:IColaDbContext
+    public class CloaDbcontext : IColaDbContext
     {
         public DbContext dbcontext { get; set; }
         public CloaDbcontext()
         {
             dbcontext = (DbContext)new myContext();
         }
-    
+
     }
 }

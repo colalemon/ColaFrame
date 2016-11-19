@@ -8,17 +8,19 @@ using ColaNet.Models.Entitys;
 
 namespace ColaNet.Web.Application
 {
-    public class UserAppService : IUserAppService
+    public class UserAppService : AppService, IUserAppService
     {
         public IRepository<User> _userRepository;
 
-        public UserAppService(IRepository<User> userRepository) 
+        public UserAppService(IRepository<User> userRepository)
         {
-            _userRepository = userRepository;
+           
+            _userRepository = userRepository;           
         }
 
         public User Add(User entity)
         {
+            logManger.Error("测试");
             return _userRepository.Add(entity);
         }
     }
