@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ColaNet.Core.Logs
 {
-    public interface ILogManger
+    public interface ILogManger : IDependency
     {
         void Info(string msg);
-        void Info(string msg,Exception ex);
+        void Info(string msg, Exception ex);
         void Warn(string msg);
         void Warn(string msg, Exception ex);
 

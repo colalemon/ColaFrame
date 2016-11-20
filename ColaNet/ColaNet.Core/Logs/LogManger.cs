@@ -8,7 +8,7 @@ namespace ColaNet.Core.Logs
 {
     public class LogManger : ILogManger
     {
-        private log4net.ILog _log = log4net.LogManager.GetLogger("LogManger");
+        private log4net.ILog _log = log4net.LogManager.GetLogger("WebLogger");
 
         public void Info(string msg) 
         {

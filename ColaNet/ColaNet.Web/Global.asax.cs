@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Autofac.Integration.Mvc;
+using log4net;
 
 namespace ColaNet.Web
 {
@@ -19,8 +20,11 @@ namespace ColaNet.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        
+
+            //注入配置
             ColaNet.Core.Module.ColaModule colaModule = new Core.Module.ColaModule();
-            var container= colaModule.Register();
+            var container = colaModule.Register();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
     }

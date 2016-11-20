@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace ColaNet.Core.Entities
         bool IsSoftDelete { get; set; }
     }
 
-   
+
     public class Entity<T> : IEntity<T>
     {
         [Key]
@@ -36,7 +37,7 @@ namespace ColaNet.Core.Entities
 
     public class Entity : IEntity<long>
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public virtual long Id { get; set; }
 
         public virtual bool IsSoftDelete { get; set; }

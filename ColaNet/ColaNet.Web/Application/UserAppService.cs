@@ -14,13 +14,13 @@ namespace ColaNet.Web.Application
 
         public UserAppService(IRepository<User> userRepository)
         {
-           
-            _userRepository = userRepository;           
+
+            _userRepository = userRepository;
         }
 
         public User Add(User entity)
         {
-            logManger.Error("测试");
+            logManger.Error("测试", new Exception() { Source = "sb" });
             return _userRepository.Add(entity);
         }
     }

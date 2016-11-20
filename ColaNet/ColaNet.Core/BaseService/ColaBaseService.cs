@@ -10,9 +10,14 @@ namespace ColaNet.Core.BaseService
     public abstract class ColaBaseService
     {
         public ILogManger logManger { get; set; }
-        public ColaBaseService() 
+
+
+        public ColaBaseService()
         {
             logManger = new LogManger();
         }
+
+
+
     }
 }

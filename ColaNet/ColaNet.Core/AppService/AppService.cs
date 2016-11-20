@@ -9,6 +9,6 @@ namespace ColaNet.Core.AppService
 {
     public abstract class AppService : ColaBaseService, IAppService
     {
-       
+        
     }
 }
