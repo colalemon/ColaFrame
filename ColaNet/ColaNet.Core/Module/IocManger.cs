@@ -9,6 +9,8 @@ using Autofac.Integration.Mvc;
 using ColaNet.Core.Logs;
 using System.Reflection;
 using System.Web.Compilation;
+using Autofac.Extras.DynamicProxy;
+using ColaNet.Core.Interceptor;
 
 
 
@@ -25,14 +27,15 @@ namespace ColaNet.Core.Module
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>)); //仓储注入
-            builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>));
-          
+            builder.RegisterType<AopIntercept>(); //拦截器注入
+
+            builder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>)).EnableInterfaceInterceptors(); //仓储注入
+            builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).EnableInterfaceInterceptors();
 
             var baseType = typeof(IDependency);
             var assembly = BuildManager.GetReferencedAssemblies().Cast<Assembly>().ToList();
             builder.RegisterControllers(assembly.ToArray()); //注册所有控制器
-            builder.RegisterAssemblyTypes(assembly.ToArray()).Where(t => baseType.IsAssignableFrom(t) && t != baseType).AsImplementedInterfaces().InstancePerLifetimeScope(); //注册所有依赖的IDependency
+            builder.RegisterAssemblyTypes(assembly.ToArray()).Where(t => baseType.IsAssignableFrom(t) && t != baseType).EnableInterfaceInterceptors().AsImplementedInterfaces().InstancePerLifetimeScope(); //注册所有依赖的IDependency
             var container = builder.Build();
 
 

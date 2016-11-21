@@ -43,7 +43,7 @@ namespace ColaNet.Core.Repositories
             if (query.Count() == 0)
                 return null;
             else
-                return query.ElementAt(0);
+                return query.ToList<T>().ElementAt(0);
 
 
         }
@@ -64,11 +64,37 @@ namespace ColaNet.Core.Repositories
         }
 
         /// <summary>
+        /// 获取查询实体列表
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
+
+        public IQueryable<T> GetAll(Expression<Func<T, bool>> where)
+        {
+            var query = _colaEntities.Set<T>().Where(where);
+            return query;
+        }
+        /// <summary>
+        /// 异步获取查询实体列表
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
+        public async Task<IQueryable<T>> GetAllAsync(Expression<Func<T, bool>> where)
+        {
+            var _result = await Task.Run<IQueryable<T>>(() =>
+            {
+                return GetAll(where);
+            });
+            return _result;
+        }
+
+
+        /// <summary>
         /// 根据条件获取实体列表
         /// </summary>
         /// <param name="where"></param>
         /// <returns></returns>
-        public List<T> GetAll(Expression<Func<T, bool>> where)
+        public List<T> GetAllList(Expression<Func<T, bool>> where)
         {
             var query = _colaEntities.Set<T>().Where(where);
             return query.ToList();
@@ -79,11 +105,11 @@ namespace ColaNet.Core.Repositories
         /// </summary>
         /// <param name="where"></param>
         /// <returns></returns>
-        public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> where)
+        public async Task<List<T>> GetAllListAsync(Expression<Func<T, bool>> where)
         {
             var _result = await Task.Run<List<T>>(() =>
             {
-                return GetAll(where);
+                return GetAllList(where);
             });
             return _result;
         }

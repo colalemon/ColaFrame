@@ -11,7 +11,12 @@ namespace ColaNet.Core.Interceptor
     {
         public void Intercept(IInvocation invocation)
         {
-            
+            invocation.Proceed();
+
+            if (invocation.Method.Name == "Add")
+            {
+                //throw new Exception();
+            }
         }
     }
 }

@@ -19,9 +19,13 @@ namespace ColaNet.Web.Application
         }
 
         public User Add(User entity)
-        {
-            logManger.Error("测试", new Exception() { Source = "sb" });
+        {           
             return _userRepository.Add(entity);
+        }
+
+        public User Get(long Id)
+        {
+            return _userRepository.Get(Id);
         }
     }
 }

@@ -20,6 +20,8 @@ namespace ColaNet.Web.Controllers
         public ActionResult Index()
         {
             var ii = _userAppService.Add(new User() { Name="陈乐乐",IsSoftDelete=false});
+
+            var ii1 = _userAppService.Get(60);
             return View();
         }
 

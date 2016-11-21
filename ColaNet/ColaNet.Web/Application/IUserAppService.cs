@@ -9,5 +9,7 @@ namespace ColaNet.Web.Application
     public interface IUserAppService : IAppService
     {
          User Add(User entity);
+
+         User Get(long Id);
     }
 }
